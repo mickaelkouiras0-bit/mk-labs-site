@@ -1,0 +1,10 @@
+Ouvre le PREMIER fichier du dossier :
+→ 00-START.html
+
+Ordre des pages (version actuelle) :
+00-START.html
+01-ACCUEIL.html
+04-EXPLORER-A-VENIR.html
+05-PACKS.html
+07-LANCER-EN-LIGNE.html
+08-SOLUTION-ENTREPRISE.html
