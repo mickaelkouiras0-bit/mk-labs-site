@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solution pour ton entreprise</title>
+
+  <!-- SEO:START -->
+  <meta name="description" content="Solutions Studio pour les entreprises : accompagnement, design et performance." />
+  <meta name="theme-color" content="#0b0d12" />
+    <link rel="canonical" href="/08-SOLUTION-ENTREPRISE.html" />
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Solution pour ton entreprise" />
+  <meta property="og:description" content="Solutions Studio pour les entreprises : accompagnement, design et performance." />
+  <meta property="og:image" content="assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Solution pour ton entreprise" />
+  <meta name="twitter:description" content="Solutions Studio pour les entreprises : accompagnement, design et performance." />
+  <meta name="twitter:image" content="assets/img/og-image.png" />
+  <!-- SEO:END -->
+<link rel="stylesheet" href="assets/css/shared.css">
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="back" href="01-ACCUEIL.html">← Accueil</a>
+      <div class="title">Solutions entreprise</div>
+    </header>
+
+    <!--
+      Parcours B2B : doit être très différent du flow e-commerce.
+      Ici, on fait un mini diagnostic "pro" : activité -> problème -> priorité.
+      Pas de "générateur", pas d'aperçu auto : on vend une solution + une collaboration.
+    -->
+    <main class="wiz wiz--b2b" data-flow="b2b">
+      <section class="wiz-card wiz-card--b2b" aria-live="polite">
+        <div class="wiz-top">
+          <div class="wiz-progress">
+            <div class="wiz-progressBar" id="wizBar"></div>
+          </div>
+          <div class="wiz-meta">
+            <span class="pill" id="wizStep">Étape 1 / 4</span>
+            <span class="pill" id="previewLabel">Entreprise • Diagnostic rapide</span>
+          </div>
+        </div>
+
+        <div class="b2b-layout">
+          <div class="b2b-main">
+            <div class="wiz-body">
+              <!-- STEP 1 -->
+              <div class="wiz-step is-on" data-step="1">
+                <h1>Quel type d’activité tu as ?</h1>
+                <p class="muted">On adapte la solution aux contraintes réelles (planning, demandes, suivi, équipe…).</p>
+
+                <div class="wiz-grid" id="b2bBizCards">
+                  <button class="wiz-option is-on" data-biz="artisan" type="button">
+                    <div class="wiz-optionTitle">Artisan / terrain</div>
+                    <div class="wiz-optionSub">Déplacements, urgences, interventions</div>
+                  </button>
+                  <button class="wiz-option" data-biz="commerce" type="button">
+                    <div class="wiz-optionTitle">Commerce</div>
+                    <div class="wiz-optionSub">Demandes, équipe, clients réguliers</div>
+                  </button>
+                  <button class="wiz-option" data-biz="services" type="button">
+                    <div class="wiz-optionTitle">Services</div>
+                    <div class="wiz-optionSub">RDV, suivi, relances</div>
+                  </button>
+                  <button class="wiz-option" data-biz="pme" type="button">
+                    <div class="wiz-optionTitle">PME / équipe</div>
+                    <div class="wiz-optionSub">Process, coordination, visibilité</div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 2 -->
+              <div class="wiz-step" data-step="2">
+                <h1>Quel est le problème principal ?</h1>
+                <p class="muted">Choisis le point qui te fait perdre le plus de temps (ou te fait rater des clients).</p>
+
+                <div class="wiz-grid" id="b2bPainCards">
+                  <button class="wiz-option is-on" data-pain="oublis" type="button">
+                    <div class="wiz-optionTitle">Je perds des demandes</div>
+                    <div class="wiz-optionSub">Messages dispersés, oublis, clients perdus</div>
+                  </button>
+                  <button class="wiz-option" data-pain="planning" type="button">
+                    <div class="wiz-optionTitle">Planning compliqué</div>
+                    <div class="wiz-optionSub">Rendez-vous, dispo, déplacements</div>
+                  </button>
+                  <button class="wiz-option" data-pain="devis" type="button">
+                    <div class="wiz-optionTitle">Devis / factures lents</div>
+                    <div class="wiz-optionSub">Perte de temps, suivi difficile</div>
+                  </button>
+                  <button class="wiz-option" data-pain="suivi" type="button">
+                    <div class="wiz-optionTitle">Suivi clients flou</div>
+                    <div class="wiz-optionSub">Historique, relances, priorités</div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 3 -->
+              <div class="wiz-step" data-step="3">
+                <h1>Ta priorité numéro 1 ?</h1>
+                <p class="muted">Ça nous aide à choisir les bons modules (simple, utile, sans sur‑complexifier).</p>
+
+                <div class="wiz-grid" id="b2bGoalCards">
+                  <button class="wiz-option is-on" data-goal="temps" type="button">
+                    <div class="wiz-optionTitle">Gagner du temps</div>
+                    <div class="wiz-optionSub">Moins d’allers‑retours, plus d’efficacité</div>
+                  </button>
+                  <button class="wiz-option" data-goal="rien" type="button">
+                    <div class="wiz-optionTitle">Ne rien oublier</div>
+                    <div class="wiz-optionSub">Centraliser, prioriser, relancer</div>
+                  </button>
+                  <button class="wiz-option" data-goal="clients" type="button">
+                    <div class="wiz-optionTitle">Avoir plus de clients</div>
+                    <div class="wiz-optionSub">Réponse rapide, parcours simple</div>
+                  </button>
+                  <button class="wiz-option" data-goal="equipe" type="button">
+                    <div class="wiz-optionTitle">Mieux travailler en équipe</div>
+                    <div class="wiz-optionSub">Visibilité, assignation, suivi</div>
+                  </button>
+                </div>
+
+                <div class="wiz-row" style="margin-top:16px">
+                  <div class="wiz-rowTitle">Délai</div>
+                  <div class="wiz-grid" id="b2bUrgencyCards">
+                    <button class="wiz-option is-on" data-urgency="soon" type="button">
+                      <div class="wiz-optionTitle">Cette semaine</div>
+                      <div class="wiz-optionSub">Besoin rapide</div>
+                    </button>
+                    <button class="wiz-option" data-urgency="month" type="button">
+                      <div class="wiz-optionTitle">Ce mois‑ci</div>
+                      <div class="wiz-optionSub">On planifie proprement</div>
+                    </button>
+                    <button class="wiz-option" data-urgency="later" type="button">
+                      <div class="wiz-optionTitle">Plus tard</div>
+                      <div class="wiz-optionSub">Je prépare le projet</div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 4 -->
+              <div class="wiz-step" data-step="4">
+                <h1>On a cadré ton besoin</h1>
+                <p class="muted">On te dit si c’est faisable et on te propose une solution claire (prix + délai + étapes).</p>
+
+                <div class="wiz-summary" id="wizSummary"></div>
+
+                <div class="b2b-reco" id="b2bReco"></div>
+
+                <div class="wiz-cta">
+                  <div class="ctaRow">
+<button class="wiz-primary" id="ctaDevis" type="button"><span class="btnIcon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="1.8" opacity=".9"/><path d="M9 3h10a2 2 0 0 1 2 2v10" stroke="currentColor" stroke-width="1.8" opacity=".9"/></svg></span><span class="btnLabel">Vérifier la faisabilité + devis</span><span class="btnArrow" aria-hidden="true">→</span></button>
+                  <button class="wiz-secondary" id="ctaTalk" type="button"><span class="btnIcon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4h4l1.2 5-2.3 1.7c1.4 2.6 3.6 4.8 6.2 6.2L18 15.8 23 17v3.5a2 2 0 0 1-2.2 2c-9.6-1.1-17.3-8.8-18.4-18.4A2 2 0 0 1 4 1h3.5L7 4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="btnLabel">Demander un appel 10 min</span><span class="btnArrow" aria-hidden="true">→</span></button>
+</div>
+                  <div class="muted" style="margin-top: 10px"><div class="ctaHelp">Devis rapide (prix + délai). Appel 10 min si tu veux valider le besoin ensemble. Aucun spam.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="b2b-aside" aria-label="Diagnostic">
+            <div class="b2b-asideTop">
+              <div class="b2b-kicker">Diagnostic</div>
+              <div class="b2b-asideTitle">Ce qu’on retient</div>
+              <div class="b2b-asideSub">Ça se met à jour au fil des choix.</div>
+            </div>
+
+            <div class="b2b-diag" id="b2bDiag"></div>
+
+            <div class="b2b-hint">
+              <div class="b2b-hintTitle">Résultat attendu</div>
+              <div class="b2b-hintBody">Une solution simple (en ligne) qui te fait gagner du temps. Ensuite on peut faire évoluer vers une vraie app si besoin.</div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="wiz-nav">
+          <button class="btn" id="wizBack" type="button">← Retour</button>
+          <button class="btn" id="wizNext" type="button">Continuer →</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/wizard.js"></script>
+  </body>
+</html>

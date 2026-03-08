@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Créer une boutique en ligne</title>
+
+  <!-- SEO:START -->
+  <meta name="description" content="Lancer votre présence en ligne avec une approche simple, premium et efficace." />
+  <meta name="theme-color" content="#0b0d12" />
+    <link rel="canonical" href="/07-LANCER-EN-LIGNE.html" />
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Créer une boutique en ligne" />
+  <meta property="og:description" content="Lancer votre présence en ligne avec une approche simple, premium et efficace." />
+  <meta property="og:image" content="assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Créer une boutique en ligne" />
+  <meta name="twitter:description" content="Lancer votre présence en ligne avec une approche simple, premium et efficace." />
+  <meta name="twitter:image" content="assets/img/og-image.png" />
+  <!-- SEO:END -->
+<link rel="stylesheet" href="assets/css/shared.css">
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="back" href="01-ACCUEIL.html">← Accueil</a>
+      <div class="title">Boutique en ligne</div>
+    </header>
+
+    <!--
+      Objectif UX : ne PAS présenter ça comme un "générateur".
+      C'est un parcours guidé qui prépare un aperçu (direction visuelle + structure).
+      Le résultat final reste réalisé / affiné sur-mesure.
+    -->
+    <main class="wiz wiz--ecom" data-flow="ecom">
+      <section class="wiz-card" aria-live="polite">
+        <div class="wiz-top">
+          <div class="wiz-progress">
+            <div class="wiz-progressBar" id="wizBar"></div>
+          </div>
+          <div class="wiz-meta">
+            <span class="pill" id="wizStep">Étape 1 / 4</span>
+            <span class="pill" id="previewLabel">E-commerce • Direction du projet</span>
+          </div>
+        </div>
+
+        <div class="wiz-body">
+          <!-- STEP 1 -->
+          <div class="wiz-step is-on" data-step="1">
+            <h1>Pourquoi tu veux lancer une boutique en ligne ?</h1>
+            <p class="muted">On adapte la structure et la stratégie à ton objectif.</p>
+            <div class="wiz-grid wiz-grid--hero" id="ecomIntentCards">
+              <button class="wiz-option wiz-option--big is-on" data-intent="vendre" type="button">
+                <div class="wiz-optionEmoji">💸</div>
+                <div>
+                  <div class="wiz-optionTitle">Vendre rapidement</div>
+                  <div class="wiz-optionSub">Lancer vite avec une structure claire</div>
+                </div>
+              </button>
+              <button class="wiz-option wiz-option--big" data-intent="tester" type="button">
+                <div class="wiz-optionEmoji">🚀</div>
+                <div>
+                  <div class="wiz-optionTitle">Tester une idée</div>
+                  <div class="wiz-optionSub">Valider un produit avant d’aller plus loin</div>
+                </div>
+              </button>
+              <button class="wiz-option wiz-option--big" data-intent="marque" type="button">
+                <div class="wiz-optionEmoji">🏷️</div>
+                <div>
+                  <div class="wiz-optionTitle">Créer une vraie marque</div>
+                  <div class="wiz-optionSub">Un site premium qui inspire confiance</div>
+                </div>
+              </button>
+              <button class="wiz-option wiz-option--big" data-intent="pro" type="button">
+                <div class="wiz-optionEmoji">📈</div>
+                <div>
+                  <div class="wiz-optionTitle">Passer au niveau pro</div>
+                  <div class="wiz-optionSub">Optimiser les ventes et la gestion</div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="wiz-step" data-step="2">
+            <h1>Qu’est-ce que tu veux vendre ?</h1>
+            <p class="muted">Ça nous aide à choisir le bon parcours (paiement, livraison, produits, etc.).</p>
+            <div class="wiz-grid" id="ecomProductCards">
+              <button class="wiz-option is-on" data-product="physique" type="button">
+                <div class="wiz-optionTitle">Produits physiques</div>
+                <div class="wiz-optionSub">Stock, livraison, retours</div>
+              </button>
+              <button class="wiz-option" data-product="digital" type="button">
+                <div class="wiz-optionTitle">Produits digitaux</div>
+                <div class="wiz-optionSub">Accès / téléchargement / email</div>
+              </button>
+              <button class="wiz-option" data-product="dropshipping" type="button">
+                <div class="wiz-optionTitle">Dropshipping</div>
+                <div class="wiz-optionSub">Structure simple + focus conversion</div>
+              </button>
+              <button class="wiz-option" data-product="indecis" type="button">
+                <div class="wiz-optionTitle">Je ne sais pas encore</div>
+                <div class="wiz-optionSub">On te conseille la meilleure option</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="wiz-step" data-step="3">
+            <h1>Comment tu veux être accompagné ?</h1>
+            <p class="muted">Choisis le niveau de cadre. On s’adapte à ta situation.</p>
+            <div class="wiz-grid" id="ecomSupportCards">
+              <button class="wiz-option is-on" data-support="base" type="button">
+                <div class="wiz-optionTitle">Une base solide</div>
+                <div class="wiz-optionSub">Tout ce qu’il faut pour démarrer proprement</div>
+              </button>
+              <button class="wiz-option" data-support="cadre" type="button">
+                <div class="wiz-optionTitle">Un cadre clair + conseils</div>
+                <div class="wiz-optionSub">On t’aide à faire les bons choix</div>
+              </button>
+              <button class="wiz-option" data-support="evolutif" type="button">
+                <div class="wiz-optionTitle">Un projet évolutif</div>
+                <div class="wiz-optionSub">Pensé pour grandir (modules, pages, etc.)</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="wiz-step" data-step="4">
+            <h1>Voilà la direction de ton projet</h1>
+            <p class="muted">On a cadré ton besoin. Maintenant, on peut te proposer la meilleure solution (prix + délai).</p>
+
+            <div class="wiz-summary" id="wizSummary"></div>
+
+            <div class="wiz-cta">
+              <button class="wiz-primary" id="ctaDevis" type="button">Construire cette boutique avec nous</button>
+              <button class="wiz-secondary" id="ctaTalk" type="button">Parler de mon projet</button>
+              <div class="muted" style="margin-top: 10px">Tu arrives sur la page devis avec ton brief déjà prêt.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wiz-nav">
+          <button class="btn" id="wizBack" type="button">← Retour</button>
+          <button class="btn" id="wizNext" type="button">Continuer →</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/wizard.js"></script>
+  </body>
+</html>

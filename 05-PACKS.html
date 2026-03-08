@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packs</title>
+
+  <!-- SEO:START -->
+  <meta name="description" content="Les packs Studio : une offre claire pour lancer ou améliorer votre site." />
+  <meta name="theme-color" content="#0b0d12" />
+    <link rel="canonical" href="/05-PACKS.html" />
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Packs" />
+  <meta property="og:description" content="Les packs Studio : une offre claire pour lancer ou améliorer votre site." />
+  <meta property="og:image" content="assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Packs" />
+  <meta name="twitter:description" content="Les packs Studio : une offre claire pour lancer ou améliorer votre site." />
+  <meta name="twitter:image" content="assets/img/og-image.png" />
+  <!-- SEO:END -->
+<link rel="stylesheet" href="assets/css/shared.css">
+    <link rel="stylesheet" href="assets/css/pages/05-packs.css">
+<link rel="stylesheet" href="assets/style.css">
+
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+
+<body class="pageBg">
+  <!-- Auto-selected pack info -->
+  <div id="packConfig" aria-label="Configuration choisie">
+    Configuration choisie :
+    <span id="cfgType"></span> •
+    <span id="cfgStyle"></span> •
+    <span id="cfgColor"></span>
+  </div>
+
+  <main class="packsWrap">
+    <section class="flowPremium" id="leadFlow" aria-label="Recevoir une proposition">
+      <div class="flowWrap">
+        <h2 class="flowTitle">Recevoir une proposition.</h2>
+        <p class="flowSub">3 questions rapides + ton email. On s’occupe du reste.</p>
+
+        <div class="flowCards single">
+          <div class="flowCard singleCard" id="selectedCard" role="group" aria-label="Configuration sélectionnée">
+            <span class="icon" id="selIcon">🧩</span>
+            <span class="label" id="selLabel">Configuration sélectionnée</span>
+            <span class="hint" id="selHint">On adapte la proposition à ton besoin.</span>
+          </div>
+        </div>
+
+        <form class="flowContact" aria-label="Mini formulaire" id="leadForm" method="post" novalidate target="hidden_iframe">
+          <div class="flowQualify">
+            <div class="qField">
+              <label for="qGoal">Ton objectif</label>
+              <select id="qGoal" name="goal" autocomplete="off">
+                <option value="Vendre" selected>Vendre (e-commerce)</option>
+                <option value="Générer des leads">Générer des leads</option>
+                <option value="Automatiser / gagner du temps">Automatiser / gagner du temps</option>
+              </select>
+            </div>
+            <div class="qField">
+              <label for="qBudget">Budget (approx.)</label>
+              <select id="qBudget" name="budget" autocomplete="off">
+                <option value="À définir" selected>À définir</option>
+                <option value="< 1 000€">&lt; 1 000€</option>
+                <option value="1 000–3 000€">1 000–3 000€</option>
+                <option value="3 000–6 000€">3 000–6 000€</option>
+                <option value="6 000€+">6 000€+</option>
+              </select>
+            </div>
+            <div class="qField">
+              <label for="qDelay">Délai</label>
+              <select id="qDelay" name="delay" autocomplete="off">
+                <option value="Dès que possible" selected>Dès que possible</option>
+                <option value="2–4 semaines">2–4 semaines</option>
+                <option value="1–2 mois">1–2 mois</option>
+                <option value="Flexible">Flexible</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="turnstileRow" aria-label="Protection anti-spam">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACaRwcFDqvRWsTKe
+" data-theme="dark"></div>
+            <div class="turnstileNote">Protection anti-spam (sans case à cocher dans la plupart des cas).</div>
+          </div>
+
+          <div class="flowEmailRow">
+            <input type="email" id="flowEmail" name="email" placeholder="Ton email" autocomplete="email" required />
+            <button id="flowSubmit" type="submit">Recevoir une proposition →</button>
+          </div>
+
+          <input type="hidden" name="type" id="flowType" />
+          <input type="hidden" name="summary" id="flowSummary" />
+          <input type="hidden" name="page" id="flowPage" />
+          <div class="flowStatus" id="flowStatus">
+            <span class="spinner" id="flowSpinner"></span>
+            <span id="flowStatusText"></span>
+          </div>
+          <div class="flowNote">Réponse humaine sous 24h • Sans engagement</div>
+          <iframe id="hidden_iframe" name="hidden_iframe" class="hiddenIframe" title="Soumission formulaire" aria-hidden="true"></iframe>
+
+          <div class="flowSecondary">
+            <a class="flowAlt" href="previews/index.html" target="_blank" rel="noopener">Voir des exemples →</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="trustStrip" aria-label="Réassurance">
+      <div class="trustItem">Réponse humaine sous 24h</div>
+      <div class="trustItem">Premium par défaut</div>
+      <div class="trustItem">Sans engagement</div>
+    </section>
+
+    <section class="howItWorks" aria-label="Comment ça marche">
+      <h3>Comment ça marche</h3>
+      <div class="steps3">
+        <div class="step"><div class="num">1</div><div><b>Tu choisis</b><div class="muted">E-commerce ou solution business.</div></div></div>
+        <div class="step"><div class="num">2</div><div><b>Tu laisses ton email</b><div class="muted">Une seule action, c’est tout.</div></div></div>
+        <div class="step"><div class="num">3</div><div><b>On te répond</b><div class="muted">Proposition claire (prix + délai).</div></div></div>
+      </div>
+    </section>
+
+    <section class="whyUs" aria-label="Pourquoi nous">
+      <h3>Pourquoi nous</h3>
+      <div class="whyGrid">
+        <div class="whyCard"><b>Conversion</b><div class="muted">Structure pensée pour vendre.</div></div>
+        <div class="whyCard"><b>Rapidité</b><div class="muted">Itérations propres, sans casse.</div></div>
+        <div class="whyCard"><b>Humain</b><div class="muted">On construit avec toi, vraiment.</div></div>
+      </div>
+    </section>
+
+    <section class="miniFaq" aria-label="FAQ">
+      <h3>FAQ</h3>
+
+      <details class="faqItem">
+        <summary class="faqQ">Délai de réponse ? <span class="faqCaret">▶</span></summary>
+        <div class="faqA">En général sous 24h (réponse humaine). Si c’est urgent, précise-le dans ton message.</div>
+      </details>
+
+      <details class="faqItem">
+        <summary class="faqQ">C’est sans engagement ? <span class="faqCaret">▶</span></summary>
+        <div class="faqA">Oui. Tu reçois une proposition claire (prix + délai) et tu décides ensuite.</div>
+      </details>
+
+      <details class="faqItem">
+        <summary class="faqQ">Prix ? <span class="faqCaret">▶</span></summary>
+        <div class="faqA">Ça dépend du besoin (e-commerce / entreprise) et de la complexité. On te répond avec un prix + un délai.</div>
+      </details>
+    </section>
+  </main>
+
+  <script>
+(function(){
+  const URL = "https://script.google.com/macros/s/AKfycbzq8gKLzgMxYpGvQpAI9pQQms2DdKOahYgbFvdJrthR15LEe8ZK1HB4kbvMo59ExW3P/exec
+";
+
+  function getParam(name){
+    try {
+      const u = new URLSearchParams(window.location.search);
+      return u.get(name);
+    } catch(e){ return null; }
+  }
+
+  // Determine selection from URL or localStorage
+  let state=null, project=null;
+  try{ state = JSON.parse(localStorage.getItem("gen_state")||"null"); }catch(e){}
+  try{ project = JSON.parse(localStorage.getItem("gen_project")||"null"); }catch(e){}
+  const urlType = (getParam("type") || getParam("config") || "").toLowerCase();
+  const stType = (state && state.type ? String(state.type).toLowerCase() : "");
+  let selected = urlType || stType || (project && project.category ? String(project.category).toLowerCase() : "") || "business";
+  if(selected.includes("ecom")) selected = "ecommerce";
+  if(selected.includes("shop")) selected = "ecommerce";
+  if(selected.includes("business")) selected = "business";
+
+  // Update packConfig top pill
+  const cfgType = document.getElementById("cfgType");
+  const cfgLabel = document.getElementById("cfgLabel");
+  if(cfgType) cfgType.textContent = (selected === "ecommerce") ? "E-commerce" : "Business";
+  if(cfgLabel) cfgLabel.textContent = (selected === "ecommerce") ? "Boutique en ligne" : "Solution entreprise";
+
+  // Update card
+  const map = {
+    ecommerce: {icon:"🛒", label:"Configuration sélectionnée : Boutique en ligne", hint:"On prépare une base prête à vendre (structure, UX, conversions)."},
+    business:  {icon:"🧩", label:"Configuration sélectionnée : Solution business", hint:"On structure/automatise ton activité (process, outils, gain de temps)."}
+  };
+  const data = map[selected] || map.business;
+  const ic = document.getElementById("selIcon");
+  const la = document.getElementById("selLabel");
+  const hi = document.getElementById("selHint");
+  if(ic) ic.textContent = data.icon;
+  if(la) la.textContent = data.label;
+  if(hi) hi.textContent = data.hint;
+
+  // Persist selection
+  const nextState = Object.assign({}, state || {});
+  nextState.type = selected;
+  try{ localStorage.setItem("gen_state", JSON.stringify(nextState)); }catch(e){}
+
+  // Submit handling
+  const btn = document.getElementById("flowSubmit");
+  const emailEl = document.getElementById("flowEmail");
+  const qGoalEl = document.getElementById("qGoal");
+  const qBudgetEl = document.getElementById("qBudget");
+  const qDelayEl = document.getElementById("qDelay");
+  const statusText = document.getElementById("flowStatusText");
+  const spinner = document.getElementById("flowSpinner");
+  const overlay = document.getElementById("thankYouOverlay");
+  const closeBtn = document.getElementById("thankClose");
+
+  // Init mini-form defaults (reuse localStorage if available)
+  try{
+    const prev = JSON.parse(localStorage.getItem("gen_project")||"null") || {};
+    if(qGoalEl && prev.q_goal) qGoalEl.value = prev.q_goal;
+    if(qBudgetEl && prev.q_budget) qBudgetEl.value = prev.q_budget;
+    if(qDelayEl && prev.q_delay) qDelayEl.value = prev.q_delay;
+    if(qGoalEl && !prev.q_goal){
+      qGoalEl.value = (selected === "ecommerce") ? "Vendre" : "Automatiser / gagner du temps";
+    }
+  }catch(e){
+    if(qGoalEl){
+      qGoalEl.value = (selected === "ecommerce") ? "Vendre" : "Automatiser / gagner du temps";
+    }
+  }
+
+  function setStatus(msg, loading){
+    if(statusText) statusText.textContent = msg || "";
+    if(spinner) spinner.style.display = loading ? "inline-block" : "none";
+    if(btn) {
+      btn.disabled = !!loading;
+      btn.classList.toggle("isLoading", !!loading);
+    }
+  }
+
+  function buildSummary(){
+    let p=null, s=null;
+    try{ p = JSON.parse(localStorage.getItem("gen_project")||"null"); }catch(e){}
+    try{ s = JSON.parse(localStorage.getItem("gen_state")||"null"); }catch(e){}
+    const parts = [];
+    if(p && p.q_goal) parts.push("Objectif: " + p.q_goal);
+    if(p && p.q_budget) parts.push("Budget: " + p.q_budget);
+    if(p && p.q_delay) parts.push("Délai: " + p.q_delay);
+    if(p && p.goal) parts.push("Objectif: " + p.goal);
+    if(p && p.product) parts.push("Produit: " + p.product);
+    if(p && p.industry) parts.push("Métier: " + p.industry);
+    if(p && p.problem) parts.push("Problème: " + p.problem);
+    if(s && s.style) parts.push("Style: " + s.style);
+    if(s && s.color) parts.push("Couleur: " + s.color);
+    return parts.join(" | ");
+  }
+
+  function readQualify(){
+    return {
+      goal: (qGoalEl?.value || "").trim() || null,
+      budget: (qBudgetEl?.value || "").trim() || null,
+      delay: (qDelayEl?.value || "").trim() || null,
+    };
+  }
+const formEl = document.getElementById("leadForm");
+const iframeEl = document.getElementById("hidden_iframe");
+const typeHidden = document.getElementById("flowType");
+const summaryHidden = document.getElementById("flowSummary");
+const pageHidden = document.getElementById("flowPage");
+
+function getTurnstileToken(){
+  const el = document.querySelector('input[name="cf-turnstile-response"]');
+  return (el && el.value ? el.value.trim() : "");
+}
+
+function markHiddenFields(){
+  if(typeHidden) typeHidden.value = (selected === "ecommerce") ? "E-commerce" : "Business";
+  if(summaryHidden) summaryHidden.value = buildSummary();
+  if(pageHidden) {
+    try{ pageHidden.value = location.href; }catch(e){ pageHidden.value = ""; }
+  }
+  if(formEl){
+    if(URL && URL.indexOf("PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE") === -1){
+      formEl.action = URL;
+    }
+  }
+}
+
+async function send(){
+  const email = (emailEl?.value || "").trim();
+  if(!email){ emailEl && emailEl.focus(); setStatus("Entre ton email pour continuer.", false); return; }
+
+  const token = getTurnstileToken();
+  if(!token){
+    setStatus("Anti-spam : valide le captcha (ou recharge la page).", false);
+    return;
+  }
+
+  if(!URL || URL.indexOf("PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE") !== -1){
+    setStatus("⚠️ Formulaire pas configuré : colle l’URL du Web App Google Apps Script.", false);
+    return;
+  }
+
+  if(btn && btn.dataset.sending === "1") return;
+  if(btn) btn.dataset.sending = "1";
+  setStatus("Envoi en cours…", true);
+
+  // Persist mini-form in localStorage so it can be re-used later
+  const q = readQualify();
+  try{
+    const prev = JSON.parse(localStorage.getItem("gen_project")||"null") || {};
+    const next = Object.assign({}, prev, {
+      q_goal: q.goal,
+      q_budget: q.budget,
+      q_delay: q.delay
+    });
+    localStorage.setItem("gen_project", JSON.stringify(next));
+  }catch(e){}
+
+  markHiddenFields();
+
+  // Submit without CORS issues: classic POST -> hidden iframe
+  try{
+    if(formEl) formEl.submit();
+  }catch(e){
+    setStatus("Oups, impossible d'envoyer. Réessaie dans 10 secondes.", false);
+    if(btn) btn.dataset.sending = "0";
+    return;
+  }
+
+  // If the iframe doesn't load (rare), fallback success message
+  window.setTimeout(()=>{
+    if(btn && btn.dataset.sending === "1"){
+      setStatus("✅ Envoyé. On revient vers toi sous 24h.", false);
+      if(overlay){ overlay.classList.add("show"); overlay.setAttribute("aria-hidden","false"); }
+      if(btn) btn.dataset.sending = "0";
+      try{ if(window.turnstile){ window.turnstile.reset(); } }catch(e){}
+    }
+  }, 6000);
+}
+
+if(formEl) formEl.addEventListener("submit", (ev)=>{ ev.preventDefault(); send(); });
+
+if(iframeEl){
+  iframeEl.addEventListener("load", ()=>{
+    if(btn && btn.dataset.sending === "1"){
+      setStatus("✅ Envoyé. On revient vers toi sous 24h.", false);
+      if(overlay){ overlay.classList.add("show"); overlay.setAttribute("aria-hidden","false"); }
+      if(btn) btn.dataset.sending = "0";
+      try{ if(window.turnstile){ window.turnstile.reset(); } }catch(e){}
+    }
+  });
+}
+
+  function closeOverlay(){
+    if(overlay){ overlay.classList.remove("show"); overlay.setAttribute("aria-hidden","true"); }
+  }
+  if(closeBtn) closeBtn.addEventListener("click", closeOverlay);
+  if(overlay) overlay.addEventListener("click", (e)=>{ if(e.target === overlay) closeOverlay(); });
+})();
+</script>
+
+  <!-- Bottom mask to hide background seam -->
+  <div class="bottomMask" aria-hidden="true"></div>
+
+</body>
+</html>
