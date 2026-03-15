@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogue — MK Labs | Toutes les Formations</title>
+  <meta name="description" content="Toutes les formations MK Labs : business, copywriting, IA, funnels, mindset. Choisissez votre prochaine transformation." />
+  <meta name="theme-color" content="#08090d" />
+  <link rel="canonical" href="/store/catalogue.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Catalogue — MK Labs | Toutes les Formations" />
+  <meta property="og:description" content="Toutes les formations MK Labs : business, copywriting, IA, funnels, mindset." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/store.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP BANNER
+       ============================================================ -->
+  <div class="topBanner" role="banner">
+    🔥 <strong>Offre limitée :</strong> -40% sur toutes les formations — Code : <strong>LAUNCH40</strong>
+  </div>
+
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <div class="navInner">
+      <a class="navBrand" href="index.html">
+        <span class="dot"></span>MK Labs
+      </a>
+      <div class="navLinks">
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.html" class="active">Formations</a>
+        <a href="#pack">Pack Élite</a>
+      </div>
+      <div class="navRight">
+        <a class="navCart" href="panier.html" aria-label="Panier">
+          🛒
+          <span class="cartBadge" aria-live="polite">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO CATALOGUE
+       ============================================================ -->
+  <section class="catalogueHero" aria-label="En-tête catalogue">
+    <div class="wrap">
+      <div class="sectionKicker">📚 Catalogue complet</div>
+      <h1 class="sectionTitle">Choisis ta transformation</h1>
+      <p class="sectionSub center" style="margin: 12px auto 0; max-width: 520px;">
+        6 formations pour maîtriser chaque aspect du business en ligne. Du mindset au funnel, tout y est.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FILTER BAR
+       ============================================================ -->
+  <div class="wrap">
+    <div class="filterBar" role="group" aria-label="Filtrer par catégorie">
+      <button class="filterBtn active" data-filter="all" type="button">Tout voir</button>
+      <button class="filterBtn" data-filter="business" type="button">💼 Business</button>
+      <button class="filterBtn" data-filter="marketing" type="button">📣 Marketing</button>
+      <button class="filterBtn" data-filter="ia" type="button">🤖 IA</button>
+      <button class="filterBtn" data-filter="mindset" type="button">🧠 Mindset</button>
+      <button class="filterBtn" data-filter="pack" type="button">👑 Pack</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       GRILLE PRODUITS
+       ============================================================ -->
+  <section class="productsSection" style="padding-top: 0;" aria-label="Liste des formations">
+    <div class="wrap">
+      <div class="productsGrid" id="catalogueGrid">
+        <!-- Injecté par JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PACK SECTION
+       ============================================================ -->
+  <section class="productsSection" id="pack" aria-label="Pack Élite">
+    <div class="wrap">
+      <div style="background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(124,58,237,0.08)); border: 1px solid rgba(245,158,11,0.2); border-radius: 24px; padding: 48px;">
+        <div class="center" style="margin-bottom: 40px;">
+          <div class="sectionKicker" style="background:var(--gold-soft);border-color:rgba(245,158,11,0.3);color:var(--gold);">👑 Meilleure valeur</div>
+          <h2 class="sectionTitle">Pack Élite — Toutes les formations</h2>
+          <p class="sectionSub center" style="margin: 12px auto 0;">
+            Économise <strong style="color:var(--gold);">311€</strong> par rapport à l'achat séparé. Accès à vie. Communauté VIP incluse.
+          </p>
+        </div>
+        <div id="packInCatalogue"><!-- injecté par JS --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GARANTIE
+       ============================================================ -->
+  <section class="trustSection" style="padding-top: 0;" aria-label="Garantie">
+    <div class="wrap">
+      <div class="guaranteeBox">
+        <div class="guaranteeIcon" aria-hidden="true">🛡️</div>
+        <div class="guaranteeContent">
+          <h3>Garantie satisfait ou remboursé — 30 jours</h3>
+          <p>
+            Tu as 30 jours pour tester, appliquer et vérifier que ça fonctionne pour toi.
+            Si tu n'es pas satisfait — pour quelque raison que ce soit — on te rembourse intégralement.
+            <strong>Un email suffit. Aucune question posée.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footerInner">
+      <div class="footerBrand">
+        <div class="footerBrandName">MK Labs</div>
+        <p class="footerBrandDesc">Des formations ebooks premium pour entrepreneurs ambitieux.</p>
+      </div>
+      <div class="footerCol">
+        <h4>Formations</h4>
+        <ul>
+          <li><a href="produit.html?id=100k-formula">100K Formula</a></li>
+          <li><a href="produit.html?id=copywriting-magnetique">Copywriting Magnétique</a></li>
+          <li><a href="produit.html?id=ia-business-accelerator">IA Business Accelerator</a></li>
+          <li><a href="produit.html?id=funnel-parfait">Le Funnel Parfait</a></li>
+          <li><a href="produit.html?id=mindset-elite">Mindset Elite</a></li>
+        </ul>
+      </div>
+      <div class="footerCol">
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="catalogue.html">Toutes les formations</a></li>
+          <li><a href="panier.html">Mon panier</a></li>
+        </ul>
+      </div>
+      <div class="footerCol">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">CGV</a></li>
+          <li><a href="mailto:contact@mklabs.fr">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <p>© 2025 MK Labs — Tous droits réservés.</p>
+      <p>🔒 Paiement sécurisé · 🛡️ Garantie 30 jours · ⚡ Accès instantané</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+  (function () {
+    let currentFilter = "all";
+    const grid = document.getElementById("catalogueGrid");
+    const packContainer = document.getElementById("packInCatalogue");
+
+    function discount(p) {
+      if (!p.oldPrice) return 0;
+      return Math.round((1 - p.price / p.oldPrice) * 100);
+    }
+    function stars(n) {
+      return "★".repeat(Math.floor(n)) + (n % 1 >= 0.5 ? "☆" : "");
+    }
+
+    function renderCard(p) {
+      const disc = discount(p);
+      return `
+      <article class="productCard${p.featured ? " featured" : ""}" data-cat="${p.category}" onclick="window.location.href='produit.html?id=${p.id}'" role="link" tabindex="0" aria-label="${p.title}">
+        <div class="cardCover" style="background:${p.cover.gradient};">
+          <span aria-hidden="true">${p.cover.emoji}</span>
+          <span class="cardCoverBadge badge ${p.badgeColor}">${p.badge}</span>
+        </div>
+        <div class="cardBody">
+          <h3 class="cardTitle">${p.title}</h3>
+          <p class="cardSub">${p.subtitle}</p>
+          <div class="cardMeta">
+            <span class="stars" aria-label="Note ${p.rating}/5">${stars(p.rating)}</span>
+            <span>${p.rating}/5</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>${p.reviews.toLocaleString("fr-FR")} avis</span>
+          </div>
+          <div class="cardHighlights">
+            ${p.highlights.map(h => `<span class="cardHighlight">${h}</span>`).join("")}
+          </div>
+        </div>
+        <div class="cardFooter">
+          <div class="cardPricing">
+            <span class="cardPrice">${formatPrice(p.price)}</span>
+            ${p.oldPrice ? `<span class="cardOldPrice">${formatPrice(p.oldPrice)}</span>` : ""}
+            ${disc > 0 ? `<span class="cardDiscount">-${disc}%</span>` : ""}
+          </div>
+          <a class="cardCta${p.badgeColor === "gold" ? " gold" : ""}" href="produit.html?id=${p.id}" onclick="event.stopPropagation()">
+            Voir →
+          </a>
+        </div>
+      </article>`;
+    }
+
+    function renderGrid(filter) {
+      const products = MK_PRODUCTS.filter(p => !p.pack);
+      const filtered = filter === "all" ? products : products.filter(p => p.category === filter);
+      grid.innerHTML = filtered.length
+        ? filtered.map(p => renderCard(p)).join("")
+        : `<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--muted);">Aucune formation dans cette catégorie.</div>`;
+    }
+
+    function renderPack() {
+      const pack = MK_PRODUCTS.find(p => p.pack);
+      if (!pack || !packContainer) return;
+      const disc = discount(pack);
+      packContainer.innerHTML = `
+        <div style="display:grid;grid-template-columns:160px 1fr auto;gap:32px;align-items:center;" class="packGridInner">
+          <div style="background:${pack.cover.gradient};border-radius:16px;height:160px;display:flex;align-items:center;justify-content:center;font-size:64px;border:1px solid rgba(255,255,255,0.1);">
+            ${pack.cover.emoji}
+          </div>
+          <div>
+            <h3 style="font-size:22px;font-weight:900;margin-bottom:8px;">${pack.title}</h3>
+            <p style="font-size:14px;color:var(--text2);margin-bottom:14px;">${pack.subtitle}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              ${pack.includes.slice(0,4).map(inc => `<span class="cardHighlight">✓ ${inc}</span>`).join("")}
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;align-items:stretch;min-width:200px;">
+            <div style="text-align:center;">
+              <div style="font-size:36px;font-weight:900;letter-spacing:-0.04em;">${formatPrice(pack.price)}</div>
+              <div style="font-size:14px;color:var(--muted);text-decoration:line-through;">${formatPrice(pack.oldPrice)}</div>
+              ${disc > 0 ? `<div style="color:var(--green);font-size:12px;font-weight:700;margin-top:2px;">Tu économises ${formatPrice(pack.oldPrice - pack.price)}</div>` : ""}
+            </div>
+            <a class="btnPrimary gold" href="${pack.checkoutUrl}" style="text-align:center;justify-content:center;">Commander →</a>
+            <a class="btnSecondary" href="produit.html?id=${pack.id}" style="text-align:center;justify-content:center;font-size:13px;padding:10px;">Voir le détail</a>
+            <p style="font-size:11px;color:var(--muted);text-align:center;">🛡️ Garantie 30j · ⚡ Accès immédiat</p>
+          </div>
+        </div>`;
+    }
+
+    /* Filter buttons */
+    document.querySelectorAll(".filterBtn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filterBtn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentFilter = btn.dataset.filter;
+        if (currentFilter === "pack") {
+          document.getElementById("pack").scrollIntoView({ behavior: "smooth", block: "start" });
+          currentFilter = "all";
+          renderGrid("all");
+          document.querySelector(".filterBtn[data-filter='all']").classList.add("active");
+        } else {
+          renderGrid(currentFilter);
+        }
+      });
+    });
+
+    renderGrid("all");
+    renderPack();
+    cartUpdateBadge();
+
+    /* Keyboard accessibility for cards */
+    document.addEventListener("keydown", e => {
+      if (e.key === "Enter" && e.target.classList.contains("productCard")) {
+        e.target.click();
+      }
+    });
+  })();
+  </script>
+
+  <style>
+    @media (max-width: 700px) {
+      .packGridInner { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+</body>
+</html>

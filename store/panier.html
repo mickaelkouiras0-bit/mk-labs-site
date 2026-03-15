@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Panier — MK Labs</title>
+  <meta name="description" content="Votre panier MK Labs — Formations ebooks premium." />
+  <meta name="theme-color" content="#08090d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/store.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP BANNER
+       ============================================================ -->
+  <div class="topBanner" role="banner">
+    🔥 <strong>Offre limitée :</strong> -40% sur toutes les formations — Code : <strong>LAUNCH40</strong>
+  </div>
+
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <div class="navInner">
+      <a class="navBrand" href="index.html">
+        <span class="dot"></span>MK Labs
+      </a>
+      <div class="navLinks">
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.html">Formations</a>
+      </div>
+      <div class="navRight">
+        <a class="navCart" href="panier.html" aria-label="Panier" style="border-color:rgba(124,58,237,0.4);">
+          🛒
+          <span class="cartBadge" aria-live="polite">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       CART PAGE
+       ============================================================ -->
+  <main class="cartPage" aria-label="Votre panier">
+    <div class="cartPageGrid" id="cartPageGrid">
+      <!-- Injecté par JS -->
+    </div>
+  </main>
+
+  <!-- ============================================================
+       UPSELL (si panier non vide et pas de pack)
+       ============================================================ -->
+  <section id="upsellSection" style="display:none;padding:0 0 64px;" aria-label="Vous pourriez aimer">
+    <div class="wrap">
+      <div style="background:linear-gradient(135deg,rgba(245,158,11,0.08),rgba(124,58,237,0.08));border:1px solid rgba(245,158,11,0.2);border-radius:20px;padding:32px;display:flex;align-items:center;gap:28px;">
+        <div style="font-size:52px;" aria-hidden="true">👑</div>
+        <div style="flex:1;">
+          <div class="badge gold" style="margin-bottom:8px;">Meilleure offre</div>
+          <h3 style="font-size:18px;font-weight:800;margin-bottom:6px;">Passe au Pack Élite et économise gros</h3>
+          <p style="font-size:13px;color:var(--muted);">Toutes les formations + bonus exclusifs. Tu économises jusqu'à <strong style="color:var(--gold);">311€</strong> par rapport à l'achat séparé.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;flex-shrink:0;">
+          <a class="btnPrimary gold" href="produit.html?id=pack-elite" style="font-size:13px;padding:12px 20px;white-space:nowrap;">Voir le Pack Élite →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footerInner">
+      <div class="footerBrand">
+        <div class="footerBrandName">MK Labs</div>
+        <p class="footerBrandDesc">Des formations ebooks premium pour entrepreneurs ambitieux.</p>
+      </div>
+      <div class="footerCol">
+        <h4>Formations</h4>
+        <ul>
+          <li><a href="produit.html?id=100k-formula">100K Formula</a></li>
+          <li><a href="produit.html?id=copywriting-magnetique">Copywriting Magnétique</a></li>
+          <li><a href="produit.html?id=ia-business-accelerator">IA Business Accelerator</a></li>
+        </ul>
+      </div>
+      <div class="footerCol">
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="catalogue.html">Toutes les formations</a></li>
+          <li><a href="produit.html?id=pack-elite">Pack Élite</a></li>
+        </ul>
+      </div>
+      <div class="footerCol">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">CGV</a></li>
+          <li><a href="mailto:contact@mklabs.fr">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <p>© 2025 MK Labs — Tous droits réservés.</p>
+      <p>🔒 Paiement sécurisé · 🛡️ Garantie 30 jours · ⚡ Accès instantané</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+  (function () {
+    const grid = document.getElementById("cartPageGrid");
+    const upsell = document.getElementById("upsellSection");
+
+    function render() {
+      const items = cartGet();
+      cartUpdateBadge();
+
+      if (items.length === 0) {
+        grid.innerHTML = `
+          <div class="cartEmpty" style="grid-column:1/-1;">
+            <div class="icon" aria-hidden="true">🛒</div>
+            <h3>Ton panier est vide</h3>
+            <p>Découvre nos formations et commence ta transformation dès aujourd'hui.</p>
+            <a class="btnPrimary" href="catalogue.html">Voir les formations →</a>
+          </div>`;
+        if (upsell) upsell.style.display = "none";
+        return;
+      }
+
+      const total = cartTotal();
+      const count = cartCount();
+      const hasMultiple = items.length > 1;
+      const hasPack = items.some(i => {
+        const p = getProductById(i.id);
+        return p && p.pack;
+      });
+
+      /* Cart items HTML */
+      const itemsHtml = items.map(item => {
+        const p = getProductById(item.id);
+        if (!p) return "";
+        return `
+          <div class="cartItem" id="cartItem-${p.id}" aria-label="${p.title}">
+            <div class="cartItemCover" style="background:${p.cover.gradient};" aria-hidden="true">
+              ${p.cover.emoji}
+            </div>
+            <div class="cartItemInfo">
+              <div class="cartItemTitle">${p.title}</div>
+              <div class="cartItemSub">${p.highlights.slice(0,2).join(" · ")}</div>
+            </div>
+            <div class="cartItemPrice">${formatPrice(p.price)}</div>
+            <button class="cartItemRemove" onclick="removeItem('${p.id}')" aria-label="Supprimer ${p.title}">✕</button>
+          </div>`;
+      }).join("");
+
+      /* Savings */
+      const totalOld = items.reduce((acc, item) => {
+        const p = getProductById(item.id);
+        return acc + (p && p.oldPrice ? p.oldPrice * item.qty : (p ? p.price * item.qty : 0));
+      }, 0);
+      const saved = totalOld - total;
+
+      /* Checkout URL — si 1 seul produit, lien direct Stripe */
+      let checkoutUrl = "#";
+      if (items.length === 1) {
+        const singleProduct = getProductById(items[0].id);
+        if (singleProduct) checkoutUrl = singleProduct.checkoutUrl;
+      } else {
+        /* Multi-produit : utilise l'URL du produit le plus cher (ou personnalise via Stripe Checkout session) */
+        const mostExpensive = items.reduce((best, item) => {
+          const p = getProductById(item.id);
+          return (p && (!best || p.price > best.price)) ? p : best;
+        }, null);
+        if (mostExpensive) checkoutUrl = mostExpensive.checkoutUrl;
+      }
+
+      grid.innerHTML = `
+        <div>
+          <h1 class="cartPageTitle">Mon panier</h1>
+          <p class="cartPageSub">${count} formation${count > 1 ? "s" : ""} sélectionnée${count > 1 ? "s" : ""}</p>
+          <div class="cartItems" aria-live="polite">
+            ${itemsHtml}
+          </div>
+          <div style="margin-top:20px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px;">
+            🔒 Paiement sécurisé par Stripe · Données chiffrées SSL · Tu ne seras jamais débité deux fois
+          </div>
+        </div>
+
+        <div>
+          <div class="orderSummary" aria-label="Récapitulatif commande">
+            <h2 class="orderSummaryTitle">Récapitulatif</h2>
+
+            ${items.map(item => {
+              const p = getProductById(item.id);
+              if (!p) return "";
+              return `<div class="orderLine">
+                <span class="label">${p.title}</span>
+                <span class="value">${formatPrice(p.price)}</span>
+              </div>`;
+            }).join("")}
+
+            ${saved > 0 ? `
+            <div class="orderLine" style="color:var(--green);">
+              <span class="label">Économies</span>
+              <span class="value">-${formatPrice(saved)}</span>
+            </div>` : ""}
+
+            <div class="orderLine">
+              <span class="label">Livraison</span>
+              <span class="value" style="color:var(--green);">Gratuite ✓</span>
+            </div>
+
+            <div class="orderTotal">
+              <span>Total</span>
+              <span class="orderTotalValue">${formatPrice(total)}</span>
+            </div>
+
+            <a class="btnPrimary checkoutBtn${hasPack ? " gold" : ""}" href="${checkoutUrl}" aria-label="Passer commande">
+              Passer commande →
+            </a>
+
+            <div class="orderNote">
+              <span>🛡️ Garantie satisfait ou remboursé 30 jours</span>
+            </div>
+
+            <div style="border-top:1px solid var(--border);padding-top:14px;">
+              <p style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px;">CODE PROMO</p>
+              <div class="promoRow">
+                <input class="promoInput" type="text" id="promoInput" placeholder="Entrer un code" aria-label="Code promo" />
+                <button class="promoApplyBtn" id="promoApply" type="button">Appliquer</button>
+              </div>
+              <div id="promoMsg" style="margin-top:6px;font-size:12px;display:none;"></div>
+            </div>
+
+            <div style="font-size:11px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:12px;padding-top:4px;">
+              <span>⚡ Accès immédiat</span>
+              <span>🔒 SSL</span>
+              <span>🔄 MAJ incluses</span>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;text-align:center;">
+            <a href="catalogue.html" style="font-size:13px;color:var(--muted);">← Continuer mes achats</a>
+          </div>
+        </div>`;
+
+      /* Upsell si pas de pack */
+      if (upsell) upsell.style.display = hasPack ? "none" : "block";
+
+      /* Promo code logic */
+      const promoInput = document.getElementById("promoInput");
+      const promoApply = document.getElementById("promoApply");
+      const promoMsg = document.getElementById("promoMsg");
+      const PROMO_CODES = { "LAUNCH40": 40, "MK20": 20, "BIENVENUE10": 10 };
+
+      if (promoApply) {
+        promoApply.addEventListener("click", () => {
+          const code = (promoInput?.value || "").trim().toUpperCase();
+          const pct = PROMO_CODES[code];
+          promoMsg.style.display = "block";
+          if (pct) {
+            promoMsg.className = "promoSuccess";
+            promoMsg.textContent = `✓ Code "${code}" appliqué — ${pct}% de réduction !`;
+          } else {
+            promoMsg.className = "";
+            promoMsg.style.color = "var(--red)";
+            promoMsg.textContent = "Code invalide ou expiré.";
+          }
+        });
+      }
+    }
+
+    function removeItem(productId) {
+      cartRemove(productId);
+      render();
+    }
+    window.removeItem = removeItem;
+
+    window.addEventListener("mk:cart:change", render);
+    render();
+  })();
+  </script>
+
+</body>
+</html>
